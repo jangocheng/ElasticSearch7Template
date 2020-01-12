@@ -115,7 +115,7 @@ ElasticSearch7Template
 	2. ，如果业务复杂拆分多个BLL项目，如test.bll.user,此处填写user即可，bll，ibll会对应生成到test.bll.user,test.Ibll.user文件夹中
 	3. 也可以不拆分多个项目，只在BLL下拆成多个文件夹，下面是否拆分bll不勾选即可
 2. 实体
-	1. 实体名称，不带entity，如，输入demo，实际生成的未demoEntity
+	1. 实体名称，不带entity，如，输入demo，实际生成的为demoEntity
 3. 平台类型
 	1. 选ELASTICSEARCH,
 4. 工作目录
@@ -132,7 +132,7 @@ ElasticSearch7Template
 2. api 只是初级版，针对es中的复杂场景，请自行拓展。
 2. 项目提供了基于sql的查询SimpleSQLQuery查询，请自行根据es的语法编写，针对Object，Nested 类型没有提供支持。
 3. 代码生成器，部分功能不属于elasticsearch，属于另外个模板项目，请不要超出上述的使用方式，可能生成的代码会报错，个人暂时不会去修改这个。
-4. GenerateCode.rar 代码生成器包，下载安装即可，基于.NET Framework 4.6。
+4. GenerateCode.rar 代码生成器包，下载安装即可，基于.NET Framework 4.6.1。
 5. 代码可能存在bug，请提交pr，thanks。
 ## 演示地址 ##
 

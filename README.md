@@ -15,12 +15,12 @@
 方便理解整个项目的情况，项目中基于一些约定，约定大于配置，违反该约定可能会出错
   
 
-1. 服务实现类统一后缀:XXXServiceImpl
-2. 服务接口统一前缀IXXXService
-3. 实体统一后缀XXXEntity
-4. 条件查询统一命名方式BaseXXXCondition
-5. DAL实现类统一后缀:XXXRepositoryImpl
-6. IDAL接口统一前缀IXXXRepository
+1. 服务实现类统一命名方式:XXXServiceImpl
+2. 服务接口统一命名方式：IXXXService
+3. 实体统一命名方式：XXXEntity
+4. 条件查询统一命名方式：BaseXXXCondition
+5. DAL实现类统一命名方式:XXXRepositoryImpl
+6. IDAL接口统一命名方式：IXXXRepository
 7. 索引对应的默认名称，别名，模板名称，统一在实体DemoEntity的特性上设置如下：
 	1. [ElasticsearchIndex(DefaultIndexName = "demo", Alias = "demo_alias", TemplateName = "demo_template")]
 	2. [ElasticsearchType(RelationName = "_doc", IdProperty = "id")]

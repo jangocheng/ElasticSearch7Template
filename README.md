@@ -99,8 +99,8 @@ ElasticSearch7Template
 ### 注意：表必须有主键，不支持联合主键  ###
 
 目前只支持从SqlServer生成，其他库暂无支持
-1. 安装, 下载地址：链接：https://pan.baidu.com/s/1AZLH5SIAcC1gZz5U1gMnpw 
-提取码：tr2v
+1. 安装, 下载地址：链接：https://pan.baidu.com/s/1ZpfDX8igJ6xOu3z_f_U7pg 
+提取码：6yr0 
 2. 登陆
 3.左侧选择数据库，
 

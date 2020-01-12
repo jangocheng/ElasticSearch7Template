@@ -43,6 +43,8 @@ ElasticSearch7Template
 - ElasticSearch7Template.Model （model层）
 - ElasticSearch7Template.Utility （工具类）
 
+项目依赖关系如下：上层依赖下层，细节依赖抽象。
+![avatar](yilai.jpg)
 
 ## 项目结构说明 ##
  项目包含一个demo例子。

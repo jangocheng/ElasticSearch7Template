@@ -11,7 +11,7 @@
 ![avatar](template.jpg)
 
 
-## 项目约定： ##
+## 项目约定##
 方便理解整个项目的情况，项目中基于一些约定，约定大于配置，违反该约定可能会出错
   
 
@@ -26,7 +26,7 @@
 	2. [ElasticsearchType(RelationName = "_doc", IdProperty = "id")]
 3. 项目根据模块分组，api同时也根据模板分组，不分组可能会出现api swagger不展示
   
-##  项目结构： ##
+##  项目结构 ##
 ElasticSearch7Template
    
 

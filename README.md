@@ -11,13 +11,27 @@
 ![avatar](/template.jpg)
 
 
+## 项目约定： ##
+方便理解整个项目的情况，项目中基于一些约定，约定大于配置，违反该约定可能会出错
+  
+
+1. 服务实现类统一后缀:XXXServiceImpl
+2. 服务接口统一前缀IXXXService
+3. 实体统一后缀XXXEntity
+4. 条件查询统一命名方式BaseXXXCondition
+5. DAL实现类统一后缀:XXXRepositoryImpl
+6. IDAL接口统一前缀IXXXRepository
+7. 索引对应的默认名称，别名，模板名称，统一在实体DemoEntity的特性上设置如下：
+	1. [ElasticsearchIndex(DefaultIndexName = "demo", Alias = "demo_alias", TemplateName = "demo_template")]
+	2. [ElasticsearchType(RelationName = "_doc", IdProperty = "id")]
+3. 项目根据模块分组，api同时也根据模板分组，不分组可能会出现api swagger不展示
   
 ##  项目结构： ##
 ElasticSearch7Template
    
 
 - .template.config  （.NET CORE 脚手架模板）
-- .editorconfig （代码规范文件）
+- .editorconfig （代码规范文件,可删除，不影响使用）
 - ElasticSearch7Template （api）
 - ElasticSearch7Template.BLL (业务逻辑)
 - ElasticSearch7Template.BLL.MediatR （业务逻辑中介通用层基于MediatR，此处暂时没用到）
@@ -29,11 +43,10 @@ ElasticSearch7Template
 - ElasticSearch7Template.Model （model层）
 - ElasticSearch7Template.Utility （工具类）
 
-## 使用 ##
 
- 项目约定：
- 方便理解整个项目的情况，项目中基于一些约定
-  
+## 项目结构说明 ##
+ 项目包含一个demo例子。
+
 1. 类的命名，api的实际编写其实基于表结构自动生成，如表名demo
 	1. ibll接口为 
 		1. IQueryDemoService 包含增删改
@@ -44,7 +57,7 @@ ElasticSearch7Template
 	3. IDAL接口为：
 		1. IDemoRepository
 	4. DAL接口实现为:
-		1. DemoRepository
+		1. DemoRepositoryImpl
 	5. Model对应的查询条件类为：
 		1. BaseDemoCondition
 	6. Entity对应的类：
@@ -54,10 +67,6 @@ ElasticSearch7Template
 		1. DemoController  es数据接口controller
 		2. DemoIndexController es索引文件接口controller
 		3. DemoTemplateController es模板文件接口controller
-2. 索引对应的默认名称，别名，模板名称，统一在实体DemoEntity的特性上设置如下：
-[ElasticsearchIndex(DefaultIndexName = "demo", Alias = "demo_alias", TemplateName = "demo_template")]
-2. [ElasticsearchType(RelationName = "_doc", IdProperty = "id")]
-3. 项目根据模块分组，api同时也根据模板分组，不分组可能会出现api swagger不展示
 4. 依赖注入：项目中使用Scrutor自动扫描注入（详情见Core项目IAutoInject，api项目下RegisterService文件），以下为瞄点
 	1. IAutoInject，IScopedAutoInject   自动注入扫描点默认为Scoped 
 	3. ISingletonAutoInject 自动注入接口和实现Singleton类型
@@ -84,7 +93,8 @@ ElasticSearch7Template
 3. dotnet build 或者dotnet run 即可
 
 ## 代码生成器使用 ##
-  
+### 注意：表必须有主键，不支持联合主键  ###
+
 目前只支持从SqlServer生成，其他库暂无支持
 1. 安装
 2. 登陆
@@ -117,11 +127,14 @@ ElasticSearch7Template
 1. editorconfig 为代码规范文件，各人不一样，我个人采用比较强制的规范，不符合会报错，可以直接删除。
 2. api 只是初级版，针对es中的复杂场景，请自行拓展。
 2. 项目提供了基于sql的查询SimpleSQLQuery查询，请自行根据es的语法编写，针对Object，Nested 类型没有提供支持。
-2. 出于各种原因考虑，生成器暂时不开源，代码可能存在bug，请提交pr，thanks。
-3. 代码生成器，部分功能不属于elasticsearch，属于另外个模板项目，请不要超出上述的使用方式，可能生成的代码会报错，个人暂时不会去修改这个
-4. GenerateCode.rar 代码生成器包，下载安装即可，基于.NET Framework 4.6
-
+2. 出于各种原因考虑，生成器暂时不开源。
+3. 代码生成器，部分功能不属于elasticsearch，属于另外个模板项目，请不要超出上述的使用方式，可能生成的代码会报错，个人暂时不会去修改这个。
+4. GenerateCode.rar 代码生成器包，下载安装即可，基于.NET Framework 4.6。
+5. 代码可能存在bug，请提交pr，thanks。
 ## 演示地址 ##
+
+## 路线图 ##
+  暂时没有 -_-
 
 ## 交流群 ##
 

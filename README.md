@@ -1,8 +1,16 @@
 # ElasticSearch7Template 
  该项目为ElasticSearch的webapi项目， 基于.NET CORE 3.1 和NEST  7.2.1，低于7.X的，请自行改写DAL层即可，
- 项目面向接口编程，鉴于es数据逻辑一般不会太复杂，简化了整个项目接口，项目中使用Scrutor自动扫描注入，
-   ![](https://i.imgur.com/ROr24mL.jpg)
-![](https://i.imgur.com/mrNVWs1.jpg)
+ 项目面向接口编程，鉴于es数据逻辑一般不会太复杂，简化了整个项目，项目中使用Scrutor自动扫描注入，
+ 
+
+1. 数据接口api：
+ ![avatar](/api.jpg)
+1. 索引接口api
+![avatar](/index.jpg)
+1. 模板接口api
+![avatar](/template.jpg)
+
+
   
 ##  项目结构： ##
 ElasticSearch7Template
@@ -75,14 +83,50 @@ ElasticSearch7Template
 	2. ElasticSearch7Template  会被全局替换为test，包括文件夹的名称
 3. dotnet build 或者dotnet run 即可
 
+## 代码生成器使用 ##
+  
+目前只支持从SqlServer生成，其他库暂无支持
+1. 安装
+2. 登陆
+3.左侧选择数据库，
+
+
+1.  选择表名右击：
+ ![avatar](/shengcheng.jpg) 
+   
+1. 命名空间前缀：
+	1. 替换ElasticSearch7Template，项目名称如test1
+1. 模块名称
+	1. 简单项目可不填默认模块名称basic
+	2. ，如果业务复杂拆分多个BLL项目，如test.bll.user,此处填写user即可，bll，ibll会对应生成到test.bll.user,test.Ibll.user文件夹中
+	3. 也可以不拆分多个项目，只在BLL下拆成多个文件夹，下面是否拆分bll不勾选即可
+2. 实体
+	1. 实体名称，不带entity，如，输入demo，实际生成的未demoEntity
+3. 平台类型
+	1. 选ELASTICSEARCH,
+4. 工作目录
+	1. 项目目录
+5. 是否拆分BLL
+	1. 如果不存在多个BLL项目，此处不勾选即可
+6. 是否生成控制器代码
+	1. 生成controller，如果不希望对外公开接口，不勾选即可
+
+生成完成后，直接运行即可``
 ## 说明 ##
 
 1. editorconfig 为代码规范文件，各人不一样，我个人采用比较强制的规范，不符合会报错，可以直接删除。
 2. api 只是初级版，针对es中的复杂场景，请自行拓展。
-2. 项目提供了基于sql的查询，请自行根据es的语法编写，针对Object，Nested 类型没有提供支持。
-2. 出于各种原因考虑，生成器暂时不开源，代码可能存在bug，请提交pr，thanks，此外不提供技术支持。
+2. 项目提供了基于sql的查询SimpleSQLQuery查询，请自行根据es的语法编写，针对Object，Nested 类型没有提供支持。
+2. 出于各种原因考虑，生成器暂时不开源，代码可能存在bug，请提交pr，thanks。
+3. 代码生成器，部分功能不属于elasticsearch，属于另外个模板项目，请不要超出上述的使用方式，可能生成的代码会报错，个人暂时不会去修改这个
+4. GenerateCode.rar 代码生成器包，下载安装即可，基于.NET Framework 4.6
 
 ## 演示地址 ##
+
+## 交流群 ##
+
+## LICENSE ##
+MIT
 
 
 

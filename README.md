@@ -4,11 +4,11 @@
  
 
 1. 数据接口api：
- ![avatar](/api.jpg)
+ ![avatar](api.jpg)
 1. 索引接口api
-![avatar](/index.jpg)
+![avatar](index.jpg)
 1. 模板接口api
-![avatar](/template.jpg)
+![avatar](template.jpg)
 
 
 ## 项目约定： ##

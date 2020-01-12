@@ -92,7 +92,8 @@ ElasticSearch7Template
 2. 进入项目目录 dotnet new myesapi XXX，创建新的es api项目
 	1.  XXX 为你的项目名称，如  dotnet new myesapi test,会创建一个项目目录test，内部包含，整个项目的源码
 	2. ElasticSearch7Template  会被全局替换为test，包括文件夹的名称
-3. dotnet build 或者dotnet run 即可
+3. 修改appsettings下的ElasticSearchConfig得 ClusterNodeUrlHosts值配置es
+5. dotnet build 或者dotnet run 即可
 
 ## 代码生成器使用 ##
 ### 注意：表必须有主键，不支持联合主键  ###

@@ -1,6 +1,6 @@
 # ElasticSearch7Template 
  该项目为ElasticSearch的webapi项目， 基于.NET CORE 3.1 和NEST  7.2.1，低于7.X的，请自行改写DAL层即可，
- 项目面向接口编程，鉴于es数据逻辑一般不会太复杂，简化了整个项目，项目中使用Scrutor自动扫描注入，
+ 项目面向接口编程，鉴于es数据逻辑一般不会太复杂，简化了整个项目，项目中使用Scrutor自动扫描注入
  
 
 1. 数据接口api：
@@ -129,7 +129,6 @@ ElasticSearch7Template
 1. editorconfig 为代码规范文件，各人不一样，我个人采用比较强制的规范，不符合会报错，可以直接删除。
 2. api 只是初级版，针对es中的复杂场景，请自行拓展。
 2. 项目提供了基于sql的查询SimpleSQLQuery查询，请自行根据es的语法编写，针对Object，Nested 类型没有提供支持。
-2. 出于各种原因考虑，生成器暂时不开源。
 3. 代码生成器，部分功能不属于elasticsearch，属于另外个模板项目，请不要超出上述的使用方式，可能生成的代码会报错，个人暂时不会去修改这个。
 4. GenerateCode.rar 代码生成器包，下载安装即可，基于.NET Framework 4.6。
 5. 代码可能存在bug，请提交pr，thanks。

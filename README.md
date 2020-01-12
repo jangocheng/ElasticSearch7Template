@@ -1,12 +1,15 @@
 # ElasticSearch7Template 
  该项目为ElasticSearch的webapi项目， 基于.NET CORE 3.1 和NEST  7.2.1，低于7.X的，请自行改写DAL层即可，
  项目面向接口编程，鉴于es数据逻辑一般不会太复杂，简化了整个项目接口，项目中使用Scrutor自动扫描注入，
- 
+   ![](https://i.imgur.com/ROr24mL.jpg)
+![](https://i.imgur.com/mrNVWs1.jpg)
+  
 ##  项目结构： ##
 ElasticSearch7Template
    
 
 - .template.config  （.NET CORE 脚手架模板）
+- .editorconfig （代码规范文件）
 - ElasticSearch7Template （api）
 - ElasticSearch7Template.BLL (业务逻辑)
 - ElasticSearch7Template.BLL.MediatR （业务逻辑中介通用层基于MediatR，此处暂时没用到）
@@ -43,7 +46,7 @@ ElasticSearch7Template
 		1. DemoController  es数据接口controller
 		2. DemoIndexController es索引文件接口controller
 		3. DemoTemplateController es模板文件接口controller
-2. 索引对应的默认名称，别名，模板名称，统一在实体的特性上设置如下：
+2. 索引对应的默认名称，别名，模板名称，统一在实体DemoEntity的特性上设置如下：
 [ElasticsearchIndex(DefaultIndexName = "demo", Alias = "demo_alias", TemplateName = "demo_template")]
 2. [ElasticsearchType(RelationName = "_doc", IdProperty = "id")]
 3. 项目根据模块分组，api同时也根据模板分组，不分组可能会出现api swagger不展示
@@ -74,7 +77,8 @@ ElasticSearch7Template
 
 ## 说明 ##
 
-1. api 只是初级版，针对es中的复杂场景，请自行拓展。
+1. editorconfig 为代码规范文件，各人不一样，我个人采用比较强制的规范，不符合会报错，可以直接删除。
+2. api 只是初级版，针对es中的复杂场景，请自行拓展。
 2. 项目提供了基于sql的查询，请自行根据es的语法编写，针对Object，Nested 类型没有提供支持。
 2. 出于各种原因考虑，生成器暂时不开源，代码可能存在bug，请提交pr，thanks，此外不提供技术支持。
 
